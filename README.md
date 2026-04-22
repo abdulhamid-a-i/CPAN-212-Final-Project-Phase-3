@@ -26,7 +26,7 @@ A Full Stack Application built using MERN technologies to Manage and track books
 ## Environment Configuration
 
 Configure Frontend Env:
-``` NEXT_PUBLIC_API_BASE_URL in frontend-web .env.local
+   NEXT_PUBLIC_API_BASE_URL in frontend-web .env.local
 
 Configure the following variables in Backend Env:
    NODE_ENV
