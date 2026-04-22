@@ -26,9 +26,11 @@ A Full Stack Application built using MERN technologies to Manage and track books
 ## Environment Configuration
 
 Configure Frontend Env:
+```bash
    NEXT_PUBLIC_API_BASE_URL in frontend-web .env.local
-
+```
 Configure the following variables in Backend Env:
+  ```bash 
    NODE_ENV
    PORT
 
@@ -48,7 +50,7 @@ Configure the following variables in Backend Env:
    KEYCLOAK_CLIENT_ID
    KEYCLOAK_BACKEND_CLIENT_ID
    KEYCLOAK_BACKEND_CLIENT_SECRET
-
+```
 ## Deployment
 
 Build Docker image using `docker compose build --progress=plain`
