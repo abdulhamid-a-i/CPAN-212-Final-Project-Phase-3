@@ -7,6 +7,7 @@ import ProtectedRoute from "@/components/guards/ProtectedRoute";
 import PageShell from "@/components/layout/PageShell";
 import SectionHeader from "@/components/layout/SectionHeader";
 import { apiRequest } from "@/lib/api";
+import RoleGuard from "@/components/guards/RoleGuard";
 import type { Book } from "@/types/book";
 
 export default function BookViewPage() {
@@ -26,6 +27,7 @@ export default function BookViewPage() {
 
   return (
     <ProtectedRoute>
+      <RoleGuard allowedRoles={["ADMIN", "MANAGER"]}>
       <PageShell>
         <SectionHeader
           title="Book Details"
@@ -131,6 +133,7 @@ export default function BookViewPage() {
           </div>
         ) : null}
       </PageShell>
+      </RoleGuard>
     </ProtectedRoute>
   );
 }

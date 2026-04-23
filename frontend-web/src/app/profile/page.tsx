@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ProtectedRoute from "@/components/guards/ProtectedRoute";
-import PageShell from "@/components/layout/PageShell";
+import StoreShell from "@/components/layout/StoreShell";
 import SectionHeader from "@/components/layout/SectionHeader";
 import { apiRequest } from "@/lib/api";
 import type { User } from "@/types/user";
@@ -75,7 +75,7 @@ export default function ProfilePage() {
   return (
     <ProtectedRoute>
       {showModal ? (<ConfirmDialog title="Suspend Profile" description="Are you sure you want to suspend your profile?" onConfirm={suspendAccount} onCancel={() => setModal(false)}></ConfirmDialog>) : null}
-      <PageShell>
+      <StoreShell>
         <SectionHeader
           title="Profile"
           subtitle="Comprehensive user identity and business profile data."
@@ -119,7 +119,7 @@ export default function ProfilePage() {
             
           </div>
         ) : null}
-      </PageShell>
+      </StoreShell>
     </ProtectedRoute>
   );
 }

@@ -8,6 +8,7 @@ import PageShell from "@/components/layout/PageShell";
 import SectionHeader from "@/components/layout/SectionHeader";
 import BookForm from "@/components/forms/BookForm";
 import { apiRequest } from "@/lib/api";
+import RoleGuard from "@/components/guards/RoleGuard";
 
 import type { Book } from "@/types/book";
 
@@ -38,6 +39,7 @@ export default function EditBookPage() {
 
   return (
     <ProtectedRoute>
+      <RoleGuard allowedRoles={["ADMIN", "MANAGER"]}>
       <PageShell>
         <SectionHeader
           title="Edit Book"
@@ -64,6 +66,7 @@ export default function EditBookPage() {
           />
         ) : null}
       </PageShell>
+      </RoleGuard>
     </ProtectedRoute>
   );
 }

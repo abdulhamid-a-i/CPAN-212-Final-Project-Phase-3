@@ -54,13 +54,13 @@ export default function AdminUsersPage() {
         <PageShell>
           <SectionHeader title="Admin Users" subtitle="Centralized user account administration." />
           <button
-          className="btn btn-secondary"
+          className="btn btn-secondary hover:bg-amber-950! transition"
           onClick={() => {router.push("users/create"); }}>Create New User</button> <></><></>
           <button
-          className="btn btn-secondary"
+          className="btn btn-secondary hover:bg-amber-950! transition"
           onClick={() => {router.push("/admin/rbac"); }}>Manage Roles</button> <></>
           <button
-          className="btn btn-secondary"
+          className="btn btn-secondary hover:bg-amber-950! transition"
           onClick={() => {router.push("/admin/account-status"); }}>Manage Status</button>
           <br></br>
           <br></br>

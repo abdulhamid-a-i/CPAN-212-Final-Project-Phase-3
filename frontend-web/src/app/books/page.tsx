@@ -159,7 +159,7 @@ export default function BookDashboardPage() {
             <Alert variant="error" message={error} />
           )}
           {canSee && (<>
-         <button className="btn btn-secondary mb-5" onClick={() => router.push("/books/create")}>Create</button>
+         <button className="btn btn-secondary mb-5 hover:bg-amber-950! transition" onClick={() => router.push("/books/create")}>Create</button>
         </>)}
 
           {/* SUMMARY */}

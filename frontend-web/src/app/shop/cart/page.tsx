@@ -18,6 +18,8 @@ interface CartItem {
 export default function CartPage() {
   const [items, setItems] = useState<CartItem[]>([]);
   const [total, setTotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
+  const [tax, setTax] = useState(0);
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
   const router = useRouter();
@@ -27,11 +29,15 @@ export default function CartPage() {
       try {
         const res = await apiRequest<{
           contents: CartItem[];
-          total: number;
+          totalPrice: number;
+          subtotal: number;
+          taxAmount: number;
         }>("/cart");
 
         setItems(res.data.contents);
         setTotal(res.data.totalPrice);
+        setTax(res.data.taxAmount);
+        setSubtotal(res.data.subtotal)
       } catch (err) {
         console.error(err);
       }
@@ -59,6 +65,8 @@ export default function CartPage() {
 
       setItems(updated.data.contents);
       setTotal(updated.data.totalPrice);
+      setTax(updated.data.taxAmount);
+      setSubtotal(updated.data.subtotal)
     } catch (err) {
       console.error(err);
     }
@@ -76,6 +84,9 @@ export default function CartPage() {
       setShowSuccess(true);
 
       setItems(res.data.contents);
+      setTotal(res.data.totalPrice);
+      setTax(res.data.taxAmount);
+      setSubtotal(res.data.subtotal)
     } catch (err) {
       console.error(err);
     }
@@ -153,6 +164,8 @@ export default function CartPage() {
             {/* Summary */}
             <div className="cart-summary">
               <h3>Order Summary</h3>
+              <p>Subtotal: ${subtotal.toFixed(2)}</p>
+              <p>Taxes: ${tax.toFixed(2)}</p>
               <p>Total: ${total.toFixed(2)}</p>
 
               <button className="checkout-btn" onClick={() => router.push("/shop/checkout")}>
