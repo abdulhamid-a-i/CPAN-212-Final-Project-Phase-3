@@ -71,7 +71,7 @@ export default function EditUserPage() {
         <PageShell>
           <SectionHeader
             title="Edit User"
-            subtitle="Edit a user account and assign roles within the insurance platform."
+            subtitle="Edit a user account and assign roles within the Bookaneers platform."
           />
 
           <div className="max-w-3xl">
