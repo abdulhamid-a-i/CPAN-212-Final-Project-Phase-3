@@ -23,6 +23,10 @@ A Full Stack Application built using MERN technologies to Manage and track books
    ```bash
    npm install
 
+6. Create a `realm-export` folder in the Keycloak folder
+
+7. Create a `certs` folder in the nginx folder
+
 ## Environment Configuration
 
 Configure Frontend Env:
